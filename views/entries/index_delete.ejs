@@ -1,0 +1,11 @@
+<% include ../head %>
+
+<ul>
+<% for(var i=0; i<entries.length; i++) { %>
+ <li><a href='/entries/<%= i %>' ><%= entries[i].slug %></a></li>
+ <form action="/entries/delete/<%= id %>" method='POST'>
+ <input type="submit">
+ </form>
+<% } %>
+</ul>
+<% include ../footer %>

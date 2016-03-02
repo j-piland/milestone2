@@ -1,0 +1,14 @@
+<!-- views/entries/new.ejs -->
+<% include ../head %>
+<!-- GET POST PUT DELETE -->
+<form action="/entries/create" method='POST'>
+<label name="slug">Slug</label>
+<input type="text" name="slug">
+<br />
+<label name="body">Body</label>
+<input type="text" name="body">
+<br />
+<input type="submit">
+</form>
+
+<% include ../footer %>
