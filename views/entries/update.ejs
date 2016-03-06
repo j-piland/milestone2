@@ -1,7 +1,5 @@
-<!-- views/entries/new.ejs -->
 <% include ../head %>
-<!-- GET POST PUT DELETE -->
-<form action="/entries/update/<%= id %>" method='POST'>
+<form action="/entries/<%= id %>" method='POST'>
 <label name="slug">Slug</label>
 <input type="text" name="slug" value="<%= entry.slug %>">
 <br />
