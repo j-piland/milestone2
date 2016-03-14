@@ -33,7 +33,7 @@ router.get('/:id/edit', function(req, res, next) {
 });
 
 /* UPDATE entry: POST /entries/1 */
-router.post('/:id/update', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   entries[req.params.id] = req.body;
   res.render('entries/index',
   {
