@@ -45,8 +45,6 @@ router.post('/', function(req, res, next) {
       res.render('entries/index', { title: 'Blog', entries: data });
     }
   );
-
-  res.redirect(303,"/entries");
 });
 
 /* UPDATE entry form: GET /entries/1/edit */
