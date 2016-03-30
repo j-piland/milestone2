@@ -4,11 +4,7 @@ var crypto = require('crypto');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Blog' });
-});
-
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Login - Blog' });
+  res.render('login', { title: 'Login - Today I Learned' });
 });
 
 router.post('/login', function(req, res, next) {
@@ -28,8 +24,8 @@ router.post('/login', function(req, res, next) {
 
       if(hashed_input === data[0].password) //DONT Do this is other projects!!!
       {
-        res.cookie('username', data[0].name);
-        res.redirect('/entries/');
+        res.cookie('username', data[0].name)
+        res.redirect('/entries');
       }
       else
       {
@@ -39,5 +35,10 @@ router.post('/login', function(req, res, next) {
   );
 
 });
+
+router.get('/logout', function(req, res){
+  res.clearCookie('username');
+  res.redirect('/');
+})
 
 module.exports = router;
